@@ -78,4 +78,5 @@ plot_position <- function(plot_race_name, plot_year, drivers = NULL) {
                         autorange = "reversed"),
            hovermode = "x unified")
 }
-plot_position(plot_race_name = "Singapore Grand Prix", plot_year = 2019)
+
+# plot_position(plot_race_name = "Singapore Grand Prix", plot_year = 2019)
