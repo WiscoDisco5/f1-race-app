@@ -39,3 +39,43 @@ plot_circuit_map <- function(circuit_name) {
 # plot_circuit_map("Marina Bay Street Circuit")
 
 ## Timing Plots
+plot_lap_times <- function(plot_race_name, plot_year, drivers = NULL) {
+  lap_times %>%
+    filter(year == plot_year,
+           race_name == plot_race_name,
+           final_position <= 3)  %>%
+    mutate(name_place = paste(final_position, "-", name_code)) %>%
+    plot_ly(data = .,
+            x = ~lap, 
+            y = ~lap_time, 
+            type = 'scatter', 
+            mode = 'lines+markers',
+            color = ~name_place) %>%
+    layout(title = paste("Lap Time over Lap Number by Driver:", plot_year, plot_race_name),
+           xaxis = list(title = "Lap Number"),
+           yaxis = list(title = "Lap Time (seconds)"),
+           hovermode = "x unified",
+           legend = list(x = 0.1, y = 0.9))
+}
+
+# plot_lap_times("Singapore Grand Prix", 2019)
+
+plot_position <- function(plot_race_name, plot_year, drivers = NULL) {
+  lap_times %>%
+    filter(year == plot_year,
+           race_name == plot_race_name) %>%
+    mutate(name_place = str_pad(paste(final_position, "-", name_code), 8, side = "left")) %>%
+    arrange(final_position) %>%
+    plot_ly(data = .,
+            x = ~lap, 
+            y = ~lap_position, 
+            type = 'scatter', 
+            mode = 'lines+markers',
+            color = ~name_place) %>%
+    layout(title = paste("Position over Lap Number by Driver:", plot_year, plot_race_name),
+           xaxis = list(title = "Lap Number"),
+           yaxis = list(title = "Position (rank)",
+                        autorange = "reversed"),
+           hovermode = "x unified")
+}
+plot_position(plot_race_name = "Singapore Grand Prix", plot_year = 2019)
