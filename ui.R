@@ -37,12 +37,16 @@ ui <- fluidPage(
     
     # Main panel for displaying outputs ----
     mainPanel(
-      
-      # Output: Histogram ----
-      leafletOutput("world_map"),
-      leafletOutput("circuit_map"),
-      plotlyOutput("lap_times"),
-      plotlyOutput("position")
+      fluidPage(
+        fluidRow(
+          column(6,leafletOutput("world_map")),
+          column(6,leafletOutput("circuit_map"))
+        ),
+        fluidRow(
+          column(6,plotlyOutput("lap_times")),
+          column(6,plotlyOutput("position"))
+        )
+      )
       
       
     )
