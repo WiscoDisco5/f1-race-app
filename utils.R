@@ -1,6 +1,15 @@
 ## Maps ----
 
-plot_world_map <- function(circuit_name) {
+get_circuit_name <- function(plot_race_name, plot_year) {
+  unique(filter_race_data(plot_race_name = plot_race_name, plot_year = plot_year)$race_data$circuit_name)
+}
+
+# get_circuit_name("Singapore Grand Prix", 2019)
+
+plot_world_map <- function(plot_race_name, plot_year) {
+  
+  circuit_name <- get_circuit_name(plot_race_name = plot_race_name, plot_year = plot_year)
+  
   # filter to track
   selected_location <- subset(f1_locations, name == circuit_name)
   
@@ -24,7 +33,10 @@ plot_world_map <- function(circuit_name) {
   
 }
 
-plot_circuit_map <- function(circuit_name) {
+plot_circuit_map <- function(plot_race_name, plot_year) {
+  
+  circuit_name <- get_circuit_name(plot_race_name = plot_race_name, plot_year = plot_year)
+  
   # filter to track
   selected_circuit <- subset(f1_circuits, Name == circuit_name)
   
@@ -35,8 +47,8 @@ plot_circuit_map <- function(circuit_name) {
     addPolylines(color = '#FF1801', opacity = 0.8)
 }
 
-# plot_world_map(circuit_name = "Marina Bay Street Circuit")
-# plot_circuit_map("Marina Bay Street Circuit")
+# plot_world_map("Singapore Grand Prix", 2019)
+# plot_circuit_map("Singapore Grand Prix", 2019)
 
 ## Timing Plots
 
@@ -96,4 +108,5 @@ plot_position <- function(plot_race_name, plot_year, drivers = NULL) {
 }
 
 # plot_position(plot_race_name = "Singapore Grand Prix", plot_year = 2019, drivers = c("Lewis Hamilton", "Sebastian Vettel"))
+
 
