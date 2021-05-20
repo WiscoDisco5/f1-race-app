@@ -5,7 +5,7 @@ source("./utils.R")
 # Define UI for app that draws a histogram ----
 ui <- navbarPage(
   # App title ----
-  "Formula 1: Race Summary Tool",
+  "Formula 1: Race Summary App",
   
   theme = shinytheme("flatly"),
   
@@ -29,7 +29,7 @@ ui <- navbarPage(
                   selected = "Austrian Grand Prix"),
       # Input: Slider for the driver ----
       selectInput(inputId = "driver",
-                  label = "Driver:",
+                  label = "Drivers:",
                   choices = unique(lap_times$driver_name),
                   multiple = TRUE,
                   selected = unique(filter(lap_times, 
@@ -55,5 +55,10 @@ ui <- navbarPage(
       width = 10
     )
   ),
-  tabPanel("About")
+  tabPanel("About",
+           h4("Purpose"),
+           "This is for...",
+           h4("Sources"),
+           "Uses data from...",
+           h4("Link to Source Code"))
 )
