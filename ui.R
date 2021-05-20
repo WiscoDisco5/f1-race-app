@@ -25,13 +25,16 @@ ui <- fluidPage(
                   label = "Race:",
                   choices = unique(lap_times$race_name),
                   multiple = FALSE,
-                  selected = "Australian Grand Prix"),
+                  selected = "Austrian Grand Prix"),
       # Input: Slider for the driver ----
       selectInput(inputId = "driver",
                   label = "Driver:",
                   choices = unique(lap_times$driver_name),
                   multiple = TRUE,
-                  selected = "Australian Grand Prix")
+                  selected = unique(filter(lap_times, 
+                                           race_name == "Austrian Grand Prix",
+                                           year == 2020,
+                                           final_position <= 3)$driver_name))
       
     ),
     
