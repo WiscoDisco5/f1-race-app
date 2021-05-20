@@ -3,13 +3,14 @@ source("./load-data.R")
 source("./utils.R")
 
 # Define UI for app that draws a histogram ----
-ui <- fluidPage(
-  
+ui <- navbarPage(
   # App title ----
-  titlePanel("Formula 1: Race Summary Tool"),
+  "Formula 1: Race Summary Tool",
+  
+  theme = shinytheme("flatly"),
   
   # Sidebar layout with input and output definitions ----
-  sidebarLayout(
+  tabPanel("Race Visualizations",
     
     # Sidebar panel for inputs ----
     sidebarPanel(
@@ -34,7 +35,8 @@ ui <- fluidPage(
                   selected = unique(filter(lap_times, 
                                            race_name == "Austrian Grand Prix",
                                            year == 2020,
-                                           final_position <= 3)$driver_name))
+                                           final_position <= 3)$driver_name)),
+      width = 2
       
     ),
     
@@ -49,9 +51,9 @@ ui <- fluidPage(
           column(6,plotlyOutput("lap_times")),
           column(6,plotlyOutput("position"))
         )
-      )
-      
-      
+      ),
+      width = 10
     )
-  )
+  ),
+  tabPanel("About")
 )
