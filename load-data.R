@@ -18,7 +18,7 @@ circuits <- select(circuits, circuitId, name) %>%
 
 races <- races %>% 
   left_join(circuits, by = "circuitId") %>%
-  select(raceId, year, name, circuit_name) %>%
+  select(raceId, year, name, circuit_name, url, date) %>%
   rename(race_name = name)
 
 drivers <- drivers %>%
@@ -38,7 +38,8 @@ lap_times <- lap_times %>%
   left_join(drivers, by = "driverId") %>%
   left_join(results, by = c("raceId", "driverId")) %>%
   rename(lap_position = position) %>%
-  select(year, race_name, circuit_name, driver_name, name_code, lap, lap_time, lap_position, final_position)
+  select(year, race_name, url, date, circuit_name, driver_name, name_code, lap, lap_time, lap_position, final_position) %>%
+  arrange(date, driver_name, lap)
 
 
 ## Load GeoJSON Data ----

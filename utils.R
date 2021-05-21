@@ -85,7 +85,7 @@ plot_lap_times <- function(plot_race_name, plot_year, drivers = NULL) {
            hovermode = "x unified")
 }
 
-# plot_lap_times("Singapore Grand Prix", 2019, drivers = c("Lewis Hamilton", "Sebastian Vettel"))
+# plot_lap_times("Australian Grand Prix", 2015, drivers = c("Lewis Hamilton (HAM)"))
 
 plot_position <- function(plot_race_name, plot_year, drivers = NULL) {
   race_data <- filter_race_data(plot_race_name = plot_race_name,
@@ -107,6 +107,4 @@ plot_position <- function(plot_race_name, plot_year, drivers = NULL) {
            hovermode = "x unified")
 }
 
-# plot_position(plot_race_name = "Singapore Grand Prix", plot_year = 2019, drivers = c("Lewis Hamilton", "Sebastian Vettel"))
-
-
+# plot_position(plot_race_name = "Singapore Grand Prix", plot_year = 2019, drivers = c("Lewis Hamilton (HAM)", "Sebastian Vettel (VET)"))
