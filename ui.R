@@ -36,6 +36,7 @@ ui <- navbarPage(
                                            race_name == "Austrian Grand Prix",
                                            year == 2020,
                                            final_position <= 3)$driver_name)),
+      uiOutput("url"),
       width = 2
       
     ),
@@ -68,7 +69,7 @@ ui <- navbarPage(
              "which gathers data from http://ergast.com/mrd/ into an easy to work with series of CSV's. Track maps and locations come from",
              a("Tomislav Bacinger's repository", 
                href = "https://github.com/bacinger/f1-circuits"),
-             "containing GeoJSON data on all of the Formula 1 Circuits.",
+             "containing GeoJSON data on all of the Formula 1 Circuits. Note that not all of the races from 2010 forward have maps available.",
              h4("Link to Source Code"),
              a("Source code for this project can be found here.", 
                href = "https://github.com/WiscoDisco5/f1-race-app"),

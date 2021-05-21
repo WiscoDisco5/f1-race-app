@@ -1,6 +1,13 @@
 # Define server logic required ----
 server <- function(input, output, session) {
   
+  output$url <- renderUI({
+    
+    a(paste(input$year, input$race, "Wiki"), 
+      href = unique(filter_race_data(input$race, input$year)$race_data$url))
+    
+  })
+  
   ## Plots
   output$world_map <- renderLeaflet({
     
