@@ -56,9 +56,23 @@ ui <- navbarPage(
     )
   ),
   tabPanel("About",
-           h4("Purpose"),
-           "This is for...",
-           h4("Sources"),
-           "Uses data from...",
-           h4("Link to Source Code"))
+           mainPanel(
+             h4("Purpose"),
+             "This application provides visualizations and maps for Formula 1 races from 2010 to present. Formula 1 is an international auto racing championship involving (as of 2021) 20 drivers, 10 contructors, and races all over the world. More information about how to interpret figures from this application can be found", 
+             a("here.", 
+               href = "https://github.com/WiscoDisco5/f1-race-app#readme"),
+             h4("Sources"),
+             "Historical race data comes thanks to",
+             a("Rohan Rao's Kaggle project", 
+               href = "https://www.kaggle.com/rohanrao/formula-1-world-championship-1950-2020"),
+             "which gathers data from http://ergast.com/mrd/ into an easy to work with series of CSV's. Track maps and locations come from",
+             a("Tomislav Bacinger's repository", 
+               href = "https://github.com/bacinger/f1-circuits"),
+             "containing GeoJSON data on all of the Formula 1 Circuits.",
+             h4("Link to Source Code"),
+             a("Source code for this project can be found here.", 
+               href = "https://github.com/WiscoDisco5/f1-race-app"),
+             width = 5 
+           )
+  )
 )
