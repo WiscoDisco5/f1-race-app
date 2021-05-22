@@ -38,7 +38,7 @@ The following examples use the 2019 Monaco Grand Prix for examples.
 
 ## Example World Map
 
-This map shows the location of the Grand Prix on the world map. The figure also adds some track data into a pop up message. The app includes a second plot with the circuit map.
+This map shows the location of the Grand Prix on the world map. The figure also adds some track data into a pop up message. The app includes a second map with the circuit layout.
 
 ```{r world_map, echo=FALSE}
 plot_world_map("Monaco Grand Prix", 2019)
