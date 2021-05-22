@@ -46,17 +46,23 @@ plot_world_map("Monaco Grand Prix", 2019)
 
 ## Example Circuit Map
 
+This map shows the circuit layout for the race.
+
 ```{r circuit_map, echo=FALSE}
 plot_circuit_map("Monaco Grand Prix", 2019)
 ```
 
 ## Example Lap Time Plot
 
+This plot shows lap times in seconds over lap number by driver. Large spikes are usually attributable to safety cars where drivers are required to drive slower.
+
 ```{r lap_times, echo=FALSE}
 plot_lap_times("Monaco Grand Prix", 2019, drivers = c("Lewis Hamilton (HAM)", "Valtteri Bottas (BOT)", "Sebastian Vettel (VET)", "Max Verstappen (VER)"))
 ```
 
 ## Example Position Plot
+
+This plot shows driver position over lap number by driver. Position represents the driver's "rank" or "place" (ie a driver finishing in 1st position gets 1st place).
 
 ```{r lap_position, echo=FALSE}
 plot_position("Monaco Grand Prix", 2019, drivers = c("Lewis Hamilton (HAM)", "Valtteri Bottas (BOT)", "Sebastian Vettel (VET)", "Max Verstappen (VER)"))
