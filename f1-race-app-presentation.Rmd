@@ -1,0 +1,61 @@
+---
+title: 'Formula 1 Race App'
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+                    encoding=encoding, 
+                    output_file=file.path(dirname(input_file), out_dir, 'index.html'))
+  })
+author: "John Goodwin"
+date: "5/21/2021"
+output: slidy_presentation
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("./dependencies.R")
+source("./load-data.R")
+source("./utils.R")
+```
+
+
+## Purpose and Data
+
+Formula 1 is an international auto racing championship involving (as of 2021) 20 drivers, 10 constructors, and races all over the world. Each Formula 1 race generates an overwhelming of data and information. This applications is intended to take a small amount of this information and data and present it in an easy to consume report than can be used to better understand historical races. The figures listed below have examples and short explanations on the following slides. [Race data](https://www.kaggle.com/rohanrao/formula-1-world-championship-1950-2020) for this project comes from Rohan Rao's Kaggle project, and [map data](https://github.com/bacinger/f1-circuits) comes from Tomislav Bacinger.
+
+
+**Maps**:
+
+* World map track location
+* Circuit Map
+
+**Plots**:
+
+* Lap time by lap number and driver
+* Position by lap number and driver
+
+The following examples use the 2019 Monaco Grand Prix for examples.
+
+## Example World Map
+
+```{r world_map, echo=FALSE}
+plot_world_map("Monaco Grand Prix", 2019)
+```
+
+## Example Circuit Map
+
+```{r circuit_map, echo=FALSE}
+plot_circuit_map("Monaco Grand Prix", 2019)
+```
+
+## Example Lap Time Plot
+
+```{r lap_times, echo=FALSE}
+plot_lap_times("Monaco Grand Prix", 2019, drivers = c("Lewis Hamilton (HAM)", "Valtteri Bottas (BOT)", "Sebastian Vettel (VET)", "Max Verstappen (VER)"))
+```
+
+## Example Position Plot
+
+```{r lap_position, echo=FALSE}
+plot_position("Monaco Grand Prix", 2019, drivers = c("Lewis Hamilton (HAM)", "Valtteri Bottas (BOT)", "Sebastian Vettel (VET)", "Max Verstappen (VER)"))
+```
