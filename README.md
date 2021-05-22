@@ -3,8 +3,8 @@ Shiny application that visualizes historical Formula 1 data and track maps. HTML
 
 ## Final products
 
-[Shiny application](https://wiscodisco5.shinyapps.io/f1-race-app/)
-[Sales pitch and summary presenation](https://wiscodisco5.github.io/f1-race-app/#(1))
+* [Shiny application](https://wiscodisco5.shinyapps.io/f1-race-app/)
+* [Sales pitch and summary presenation](https://wiscodisco5.github.io/f1-race-app/#(1))
 
 ## Data
 
