@@ -1,6 +1,11 @@
 # f1-race-app
 Shiny application that visualizes historical Formula 1 data and track maps. HTML presentation describes use of app. Created for final project of Developing Data Products JHU Coursera course.
 
+## Final products
+
+[Shiny application](https://wiscodisco5.shinyapps.io/f1-race-app/)
+[Sales pitch and summary presenation](https://wiscodisco5.github.io/f1-race-app/#(1))
+
 ## Data
 
 ### Historical Race and Lap Time data
